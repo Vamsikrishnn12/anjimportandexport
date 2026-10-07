@@ -1,11 +1,4 @@
-import { Mail, MapPin, Clock3 } from "lucide-react";
-import { PageHero } from "@/components/page-hero";
-import { SiteShell } from "@/components/site-shell";
-
-export default function Contact() { return <SiteShell>
-  <PageHero eyebrow="Start a conversation" title="Let’s discuss your next shipment." intro="Share what you want to source or supply, the expected quantity and the destination. We’ll help map the next step." />
-  <section className="section-shell contact-grid section-pad">
-    <aside className="contact-details"><span className="kicker">Contact</span><h2>Ready when your requirement is.</h2><p>For product enquiries, sourcing requests and partnership opportunities, reach our team from anywhere in India or abroad.</p><div className="contact-line"><MapPin/><div><strong>Based in</strong><span>Tamil Nadu, India</span></div></div><div className="contact-line"><Mail/><div><strong>Email</strong><a href="mailto:enquiry@anjglobal.in">enquiry@anjglobal.in</a></div></div><div className="contact-line"><Clock3/><div><strong>Business hours</strong><span>Monday–Saturday · 9:00 AM–6:00 PM IST</span></div></div></aside>
-    <form className="contact-form" action="mailto:enquiry@anjglobal.in" method="post" encType="text/plain"><div className="field-row"><label>Your name<input name="name" required placeholder="Full name" /></label><label>Company<input name="company" placeholder="Company name" /></label></div><div className="field-row"><label>Email<input type="email" name="email" required placeholder="you@company.com" /></label><label>Phone<input type="tel" name="phone" placeholder="+91" /></label></div><label>Product or service<select name="interest" defaultValue=""><option value="" disabled>Select a requirement</option><option>Fresh fruits</option><option>Vegetables</option><option>Seeds</option><option>Food & spices</option><option>Industry products</option><option>Other sourcing</option></select></label><label>Tell us about your requirement<textarea name="message" required rows={5} placeholder="Product, quantity, origin or destination…" /></label><button className="neon-button" type="submit">Prepare enquiry email</button><small>This opens your email app so you can review and send the enquiry.</small></form>
-  </section>
-</SiteShell> }
+import { TradeSite } from "@/components/trade-site";
+export const dynamic = "force-static";
+export const metadata={title:"Contact"};
+export default function Page(){return <TradeSite page="contact"/>;}
