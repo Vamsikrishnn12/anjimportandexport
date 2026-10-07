@@ -1,82 +1,37 @@
 import Link from "next/link";
-import { ArrowUpRight, Check, Ship, Sprout, Wheat, PackageCheck } from "lucide-react";
+import { Boxes, CircleDot, Globe2, PackageCheck, Plane, Ship, Sprout, Truck } from "lucide-react";
 import { SiteShell } from "@/components/site-shell";
 
-const categories = [
-  { icon: Sprout, number: "01", title: "Fresh fruits", text: "Carefully sourced seasonal produce, selected for freshness and reliable transit." },
-  { icon: Wheat, number: "02", title: "Vegetables & seeds", text: "Quality vegetables, agricultural seeds and planting materials for diverse requirements." },
-  { icon: PackageCheck, number: "03", title: "Industry products", text: "Flexible sourcing support for general merchandise and industry-specific goods." },
+const products = [
+  { icon: Sprout, tag: "AGRI 01", title: "Fresh produce", copy: "Fruits and vegetables selected for market, season and journey." },
+  { icon: PackageCheck, tag: "AGRI 02", title: "Seeds & staples", copy: "Agricultural seeds, grains, pulses, spices and food products." },
+  { icon: Boxes, tag: "TRADE 03", title: "Industry goods", copy: "Requirement-led sourcing for commercial and industrial products." },
 ];
 
 export default function Home() {
-  return (
-    <SiteShell>
-      <section className="hero section-shell">
-        <div className="hero-copy reveal">
-          <div className="eyebrow"><span /> Tamil Nadu to the world</div>
-          <h1>Trade that moves <em>with purpose.</em></h1>
-          <p className="hero-lede">ANJ Global connects dependable products with markets across India and beyond—from fresh produce and seeds to a broad range of commercial goods.</p>
-          <div className="hero-actions">
-            <Link href="/products" className="button button-gold">Explore products <ArrowUpRight size={17} /></Link>
-            <Link href="/contact" className="text-link">Start an enquiry <span>↗</span></Link>
-          </div>
-          <div className="trust-row">
-            <div><strong>Pan-India</strong><span>Trade network</span></div>
-            <div><strong>Multi-sector</strong><span>Product sourcing</span></div>
-            <div><strong>End-to-end</strong><span>Shipment support</span></div>
-          </div>
-        </div>
+  return <SiteShell>
+    <section className="cinema-hero">
+      <video className="hero-film" autoPlay muted loop playsInline poster="/anj-global-logistics.jpeg"><source src="/cargo-port-motion.mp4" type="video/mp4" /></video>
+      <div className="film-shade" /><div className="motion-grid" aria-hidden="true" />
+      <svg className="route-graphic" viewBox="0 0 900 420" aria-hidden="true"><path d="M55 340 C220 90 480 85 825 190" /><path d="M120 380 C370 240 555 280 835 80" /><circle cx="55" cy="340" r="7"/><circle cx="825" cy="190" r="7"/><circle cx="835" cy="80" r="7"/></svg>
+      <div className="cinema-content section-shell">
+        <div className="hero-status"><span>ANJ / GLOBAL TRADE</span><span className="live-mark">Network active</span></div>
+        <div className="hero-title-wrap"><p>Import & export · Tamil Nadu · India</p><h1>Local roots.<br/><i>World-scale</i> reach.</h1></div>
+        <div className="hero-lower"><p>We source, coordinate and move products across India and international markets—fresh produce, agricultural goods and industry requirements.</p><div className="hero-actions"><Link href="/contact" className="neon-button">Start a trade enquiry</Link><Link href="/products" className="ghost-button">View product range</Link></div></div>
+        <div className="scroll-cue"><span>Scroll to explore</span><div /></div>
+      </div>
+    </section>
 
-        <div className="hero-visual reveal delay-1">
-          <div className="orbit orbit-one" /><div className="orbit orbit-two" />
-          <div className="visual-card">
-            <img src="/anj-global-logistics.jpeg" alt="Global freight by air, sea and road" />
-          </div>
-          <div className="floating-tag tag-top"><span className="pulse" /> Live trade routes</div>
-          <div className="floating-tag tag-bottom"><Ship size={18} /> Sea · Air · Road</div>
-        </div>
-      </section>
+    <section className="signal-bar" aria-label="Trade capabilities"><div><span>GLOBAL SOURCING</span><i>●</i><span>IMPORT COORDINATION</span><i>●</i><span>EXPORT SUPPORT</span><i>●</i><span>PAN-INDIA NETWORK</span><i>●</i><span>GLOBAL SOURCING</span><i>●</i></div></section>
 
-      <section className="marquee" aria-label="Our capabilities"><div>FRESH PRODUCE <i>✦</i> GLOBAL SOURCING <i>✦</i> EXPORT SUPPORT <i>✦</i> QUALITY FOCUSED <i>✦</i> PAN-INDIA NETWORK <i>✦</i></div></section>
+    <section className="section-shell intro-block"><div className="intro-index">01 / WHAT WE MOVE</div><div className="intro-statement"><h2>Goods do not just cross borders.<br/><span>They connect opportunity.</span></h2><p>ANJ Global brings responsive sourcing and careful shipment coordination into one clear trade relationship.</p></div></section>
 
-      <section className="section-shell section-pad">
-        <div className="section-head">
-          <div><span className="kicker">What we move</span><h2>Products with a clear path to market.</h2></div>
-          <p>From farm-led categories to industry requirements, our sourcing network is built to respond with care, clarity and dependable coordination.</p>
-        </div>
-        <div className="category-grid">
-          {categories.map(({ icon: Icon, number, title, text }) => (
-            <article className="category-card" key={title}>
-              <div className="card-top"><span>{number}</span><Icon /></div>
-              <h3>{title}</h3><p>{text}</p>
-              <Link href="/products" aria-label={`View ${title}`}>View range <ArrowUpRight size={16} /></Link>
-            </article>
-          ))}
-        </div>
-      </section>
+    <section className="section-shell product-panels">
+      {products.map(({icon:Icon,tag,title,copy},i)=><article key={title} className="product-panel"><div className="panel-number">0{i+1}</div><div className="panel-icon"><Icon/></div><span>{tag}</span><h3>{title}</h3><p>{copy}</p><Link href="/products">Explore category</Link></article>)}
+    </section>
 
-      <section className="dark-section">
-        <div className="section-shell split-story">
-          <div className="story-visual">
-            <img src="/anj-global-mark.jpeg" alt="ANJ Global trade identity" />
-            <div className="route-line"><span /><span /><span /></div>
-          </div>
-          <div className="story-copy">
-            <span className="kicker kicker-light">How we work</span>
-            <h2>One partner.<br />Every moving part.</h2>
-            <p>We bring sourcing, coordination and shipment support into one responsive workflow—so every consignment keeps moving with fewer surprises.</p>
-            <ul>
-              {['Requirement-led product sourcing','Quality and documentation checks','Logistics coordination across modes','Clear communication from origin to destination'].map(x => <li key={x}><Check size={15} />{x}</li>)}
-            </ul>
-            <Link href="/services" className="button button-light">See our process <ArrowUpRight size={17} /></Link>
-          </div>
-        </div>
-      </section>
+    <section className="network-section"><div className="network-visual"><div className="globe-core"><Globe2/><span className="ring r1"/><span className="ring r2"/><span className="ring r3"/></div><div className="mode-chip mode-air"><Plane/> Air</div><div className="mode-chip mode-sea"><Ship/> Sea</div><div className="mode-chip mode-road"><Truck/> Road</div></div><div className="network-copy"><span className="section-label">02 / CONNECTED MOVEMENT</span><h2>One network.<br/>Multiple modes.<br/><em>Clear direction.</em></h2><p>From source to destination, we align product, paperwork and transport around your requirement.</p><ul><li><CircleDot/> Buyer-led product sourcing</li><li><CircleDot/> Quality and packing alignment</li><li><CircleDot/> Shipment and document coordination</li></ul><Link className="neon-button" href="/services">See how we work</Link></div></section>
 
-      <section className="section-shell cta-band">
-        <div><span className="kicker">Let’s move business forward</span><h2>Have a product or market in mind?</h2></div>
-        <Link href="/contact" className="button button-dark">Talk to our team <ArrowUpRight size={17} /></Link>
-      </section>
-    </SiteShell>
-  );
+    <section className="trade-cta section-shell"><p>Have a market or product in mind?</p><h2>Let’s move it<br/><i>forward.</i></h2><Link href="/contact" className="neon-button">Talk to our team</Link></section>
+  </SiteShell>
 }
