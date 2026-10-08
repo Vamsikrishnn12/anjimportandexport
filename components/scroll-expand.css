@@ -20,3 +20,5 @@
 .scroll-expand[data-static=true] .scroll-expand__overlay{position:relative;opacity:1!important;transform:none!important;padding-block:50px}
 .scroll-expand[data-static=true] .scroll-expand__hint{display:none}
 @media(prefers-reduced-motion:reduce){.scroll-expand__frame,.scroll-expand__media-wrap,.scroll-expand__overlay,.scroll-expand__title,.scroll-expand__hint{will-change:auto}}
+@media(max-width:600px){.scroll-expand__stage{min-height:460px}.scroll-expand__title,.scroll-expand__overlay{padding-inline:20px}.scroll-expand__hint{bottom:18px;font-size:12px;letter-spacing:.1em}}
+@media(max-width:380px){.scroll-expand__title,.scroll-expand__overlay{padding-inline:16px}.scroll-expand__hint{font-size:11px}}

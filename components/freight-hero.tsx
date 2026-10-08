@@ -265,6 +265,7 @@ OTHER DEALINGS IN THE FONT SOFTWARE.
 .freight-hero .feature p{margin:0;max-width:530px;font:400 16px/1.6 Arial,sans-serif;color:#d0dbe0}
 .freight-hero .feature p span{display:inline}
 @media(max-width:800px){.freight-hero{--se-top:73px}.freight-hero .stage{gap:32px}.freight-hero .feature{grid-template-columns:28px 1fr;gap:10px 14px}.freight-hero .feature .icon{width:28px;height:30px}.freight-hero .feature h2{font-size:24px}}
-@media(max-width:600px){.freight-hero .stage{grid-template-columns:1fr;gap:28px}.freight-hero .eyebrow{font-size:12px;letter-spacing:.1em}.freight-hero .headline{font-size:8.6vw;line-height:1.15}.freight-hero .feature{padding-top:20px}.freight-hero .feature p{line-height:1.5}}
+@media(max-width:600px){.freight-hero .stage{grid-template-columns:minmax(0,1fr);gap:24px}.freight-hero .eyebrow{font-size:12px;letter-spacing:.1em;margin-bottom:20px}.freight-hero .headline{font-size:clamp(28px,8.6vw,38px);line-height:1.12}.freight-hero .feature{padding-top:18px}.freight-hero .feature h2{font-size:clamp(19px,6vw,24px)}.freight-hero .feature p{font-size:14px;line-height:1.45}}
+@media(max-width:380px){.freight-hero .stage{gap:18px}.freight-hero .feature{padding-top:14px}.freight-hero .feature p{font-size:13px}.freight-hero .eyebrow{font-size:11px}}
 @media(max-height:600px) and (min-width:601px){.freight-hero .headline{font-size:8vh}.freight-hero .stage{gap:22px}.freight-hero .feature{padding-top:16px}.freight-hero .feature h2{font-size:22px}}
 `;
