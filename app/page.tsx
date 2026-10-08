@@ -1,7 +1,7 @@
 import { TradeSite } from "@/components/trade-site";
 export const dynamic = "force-static";
 export const metadata={
-  title:{absolute:"Logistics that works as hard as you do."},
-  description:"One point of contact and full supply-chain visibility, origin to destination.",
+  title:{absolute:"ANJ Global Import & Export | Tamil Nadu to Global Markets"},
+  description:"Source fresh produce, chips, seeds and industrial products with ANJ Global. Import and export coordination from Tamil Nadu across India and global markets.",
 };
 export default function Page(){return <TradeSite page="home"/>;}
